@@ -4,7 +4,7 @@ library(rvest)
 x <- read_html("https://en.wikipedia.org/wiki/UEFA_Euro_2020_squads")
 
 raw_data <- x %>%
-              html_elements(".nat-fs-player th") %>%
+              html_elements("tr :nth-child(4)") %>%
               html_text2() %>%
               as_tibble()
 
